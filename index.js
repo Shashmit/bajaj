@@ -1,13 +1,13 @@
 const express = require("express");
 const cors = require("cors");
 const app = express();
+require("dotenv").config();
 app.use(express.json());
 app.use(
   cors({
     origin: "*",
   })
 );
-require("dotenv").config();
 app.post("/bfhl", (req, res) => {
   try {
     const { full_name, dob, data } = req.body;
