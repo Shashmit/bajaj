@@ -6,6 +6,7 @@ app.use(express.json());
 app.use(
   cors({
     origin: "*",
+    credentials: false,
   })
 );
 app.get("/", (req, res) => {
