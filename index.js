@@ -8,6 +8,9 @@ app.use(
     origin: "*",
   })
 );
+app.get("/", (req, res) => {
+  res.status(200).send({ message: "Welcome to the API" });
+});
 app.post("/bfhl", (req, res) => {
   try {
     const { full_name, dob, data } = req.body;
