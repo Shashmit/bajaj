@@ -1,14 +1,7 @@
 const express = require("express");
-const cors = require("cors");
 const app = express();
 require("dotenv").config();
 app.use(express.json());
-app.use(
-  cors({
-    origin: "*",
-    credentials: false,
-  })
-);
 app.get("/", (req, res) => {
   res.status(200).send({ message: "Welcome to the API" });
 });
@@ -45,6 +38,6 @@ app.get("/bfhl", (req, res) => {
   }
 });
 
-app.listen(process.env.ORIGIN_PORT, () => {
-  console.log("Server is running on port " + process.env.ORIGIN_PORT);
+app.listen(process.env.PORT, () => {
+  console.log("Server is running on port " + process.env.PORT);
 });
