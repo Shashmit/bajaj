@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const port = 4000;
 app.use(express.json());
-
+require("dotenv").config();
 app.post("/bfhl", (req, res) => {
   try {
     const { full_name, dob, data } = req.body;
@@ -36,6 +36,6 @@ app.get("/bfhl", (req, res) => {
   }
 });
 
-app.listen(port, () => {
+app.listen(process.env.ORIGIN_PORT, () => {
   console.log("Server is running on port " + port);
 });
