@@ -1,6 +1,12 @@
 const express = require("express");
+const cors = require("cors");
 const app = express();
 app.use(express.json());
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 require("dotenv").config();
 app.post("/", (req, res) => {
   try {
