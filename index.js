@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 app.use(express.json());
 require("dotenv").config();
-app.post("/bfhl", (req, res) => {
+app.post("/", (req, res) => {
   try {
     const { full_name, dob, data } = req.body;
     console.log(data);
@@ -27,7 +27,7 @@ app.post("/bfhl", (req, res) => {
   }
 });
 
-app.get("/bfhl", (req, res) => {
+app.get("/", (req, res) => {
   try {
     res.status(200).send({ operation_code: 1 });
   } catch (err) {
