@@ -42,5 +42,5 @@ app.get("/bfhl", (req, res) => {
 });
 
 app.listen(process.env.ORIGIN_PORT, () => {
-  console.log("Server is running on port " + port);
+  console.log("Server is running on port " + process.env.ORIGIN_PORT);
 });
