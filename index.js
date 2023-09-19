@@ -8,7 +8,7 @@ app.use(
   })
 );
 require("dotenv").config();
-app.post("/", (req, res) => {
+app.post("/bfhl", (req, res) => {
   try {
     const { full_name, dob, data } = req.body;
     console.log(data);
@@ -33,7 +33,7 @@ app.post("/", (req, res) => {
   }
 });
 
-app.get("/", (req, res) => {
+app.get("/bfhl", (req, res) => {
   try {
     res.status(200).send({ operation_code: 1 });
   } catch (err) {
